@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Home Page
 
-## Available Scripts
+1. Is mapped to root context (&quot;/&quot;) and (&quot;/home&quot;).
+2. Is the first page when visiting the website
+3. It displays generic content for anonymous users . The content is dynamic based on the latest data. For instance, **Anonymous users** can see all schools
+4. Must display specific content for the logged in user. The content is dynamic based on the most recent data entered by the logged in user. For instance, **recruiter** can see – the schools they  posted and his recent followers and **students** can see – schools they like and recruiters they follow.
 
-In the project directory, you can run:
+# Profile Page
 
-### `npm start`
+1. Does allow users to change their personal information. If a user is logged in then they can see their profile including sensitive information such as email and phone
+2. Is accessible to other users including anonymous users
+3. Does hide personal/private information from others visiting the profile. If a user is visiting someone else&#39;s profile, then they can&#39;t see that other user&#39;s sensitive information
+4. Is mapped to &quot;/profile&quot; for displaying the profile of the currently logged in user
+5. Is mapped to &quot;/profile/{profileId}&quot; for displaying someone elses profile
+6. Display lists of snippets and links of all data related to a user. For instance, users can go to the profile page of another user through the followers. Recruiters can see a student&#39;s profile and details through his home page where his list of followers are added.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Search/Search Results Page
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. Search Schools using search a API from :
+2. It a summarized list of schools matching the search criteria. Results come from the remote API, not the local database
+3. Each school can be clicked as its a link to navigate to the details page (see below)
+4. It is mapped to /search when no search has been executed and no results exist
+5. It is mapped to /search/{search criteria} when a search has been executed and according results shown
+6. It augment the results with related data in your local database
 
-### `npm test`
+# Details Page
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Does retrieve details from the remote API based on SchoolID as a parameter from the search/results page
+2. Does display additional related data from the local database.
+3.  Does provide links to related data/users. For instance, can view the school on their website
+4. Must be mapped to /details/{unique identifier} or /details?identifier={unique identifier} where unique identifier uniquely identies the item being displayed
 
-### `npm run build`
+#  Login Page
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The login and register page allow users to register with the web site and then login later on
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1. Allow login in and identifying themselves
+2. Disallow access to view ALL Recruiters Web page unless logged in
+3. Allow access to all other Web pages even when not logged in
+4. Adapt content based on whether user is logged in or not for at least the Home page and Profile page
+5. Does force login only when identity is required. For instance, an anonymous user might like the school so the application requests the user to login
+6. Is mapped to /login
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Register Page
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Allows users to register and create a new account
+2. Allow choosing a role(s) for a user. For instance, recruiter/student.
+3. Allow login in and identifying themselves
+4. Disallow access to view ALL Recruiters Web page unless logged in
+5. Allow access to all other Web pages even when not logged in
+6. Adapt content based on whether user is logged in or not for at least the Home page and Profile page
+7. Does force login only when identity is required. For instance, an anonymous user might like the school so the application requests the user to login
+8. Is mapped to /register
+9. Validates all field with their correct data type.
+10.  Does not allow same username to register again
