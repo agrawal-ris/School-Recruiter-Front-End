@@ -1,10 +1,10 @@
 # Website URL 
 
-[http://school-recruiter.herokuapp.com/] (http://school-recruiter.herokuapp.com/)
+[http://school-recruiter.herokuapp.com/](http://school-recruiter.herokuapp.com/)
 
 # Back End Code
 
-[https://github.com/agrawal-ris/School-Recruiter-Back-End] Back End Repository
+[Back End Repository](https://github.com/agrawal-ris/School-Recruiter-Back-End)
 
 
 
